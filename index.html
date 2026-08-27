@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12172A">
+<title>かぞくソウル旅 2026.8.29–31｜旅のしおり</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=DM+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#12172A; --ink-2:#1b2038;
+    --paper:#FBF6EF; --card:#ffffff;
+    --text:#23283A; --soft:#6B7185; --line:#EAE3D7;
+    --d1:#FF5C86; --d1-s:#FFE7EE;
+    --d2:#7C6CF0; --d2-s:#ECE8FF;
+    --d3:#12B487; --d3-s:#D7F4EC;
+    --accent:var(--d1); --accent-s:var(--d1-s);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans JP",system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+  /* ---------- sticky nav ---------- */
+  .nav{position:sticky;top:0;z-index:50;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(251,246,239,.82);border-bottom:1px solid var(--line)}
+  .nav__in{max-width:680px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;gap:8px}
+  .nav__title{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.86rem;margin-right:auto;letter-spacing:.02em}
+  .nav__title span{color:var(--soft);font-weight:500;font-family:"DM Mono",monospace;font-size:.74rem}
+  .pill{font-family:"DM Mono",monospace;font-size:.72rem;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--soft);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+  .pill--1{--pc:var(--d1)} .pill--2{--pc:var(--d2)} .pill--3{--pc:var(--d3)}
+  .pill[aria-current="true"]{background:var(--pc);border-color:var(--pc);color:#fff}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:60px 0 48px;isolation:isolate}
+  .hero__glow{position:absolute;inset:-25% -15% auto -15%;height:560px;z-index:-1;filter:blur(64px);opacity:.5}
+  .blob{position:absolute;border-radius:50%;mix-blend-mode:screen}
+  .blob--a{width:340px;height:340px;background:#FF5C86;left:-30px;top:-30px;animation:drift 15s ease-in-out infinite alternate}
+  .blob--b{width:300px;height:300px;background:#7C6CF0;right:-20px;top:0;animation:drift 19s ease-in-out infinite alternate-reverse}
+  .blob--c{width:280px;height:280px;background:#12B487;left:32%;top:140px;animation:drift 23s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate3d(28px,42px,0) scale(1.16)}}
+
+  .eyebrow{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .hero__kr{font-family:"Black Han Sans","Noto Sans KR",sans-serif;font-size:clamp(74px,25vw,146px);line-height:.9;margin:.1em 0 .06em;background:linear-gradient(100deg,#FF8FB0,#9E8CFF 46%,#3FD9B4);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero__en{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;letter-spacing:.26em;font-size:.98rem}
+  .hero__sub{color:rgba(255,255,255,.72);margin-top:6px;font-size:.92rem}
+
+  .pass{margin-top:26px;border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:16px 18px;background:rgba(255,255,255,.045)}
+  .pass__row{display:flex;align-items:center;gap:12px;font-family:"DM Mono",monospace}
+  .pass__code{font-size:1.45rem;font-weight:500;letter-spacing:.02em}
+  .pass__city{font-size:.66rem;color:rgba(255,255,255,.55);letter-spacing:.14em;display:block;margin-top:2px}
+  .pass__mid{flex:1;text-align:center;position:relative}
+  .pass__mid::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px dashed rgba(255,255,255,.28)}
+  .pass__mid span{background:var(--ink);padding:0 8px;position:relative;font-size:.9rem}
+  .pass__meta{color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.14em;margin-top:12px;font-family:"DM Mono",monospace}
+
+  .count{margin-top:22px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.05rem;display:flex;align-items:baseline;gap:8px}
+  .count b{color:#FF8FB0;font-size:2rem;font-family:"Black Han Sans","Noto Sans KR",sans-serif;letter-spacing:.02em}
+  .scrollcue{margin-top:22px;font-size:.78rem;color:rgba(255,255,255,.55);font-family:"DM Mono",monospace}
+
+  /* ---------- day sections ---------- */
+  .day{padding:44px 0 6px;scroll-margin-top:56px}
+  .day--1{--accent:var(--d1);--accent-s:var(--d1-s)}
+  .day--2{--accent:var(--d2);--accent-s:var(--d2-s)}
+  .day--3{--accent:var(--d3);--accent-s:var(--d3-s)}
+  .day__eyebrow{font-family:"DM Mono",monospace;font-size:.74rem;letter-spacing:.3em;color:var(--accent);font-weight:500}
+  .day__date{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.6rem;margin:2px 0 4px}
+  .day__route{color:var(--soft);font-size:.82rem;font-family:"DM Mono",monospace;letter-spacing:.02em}
+  .day__hr{height:3px;background:var(--accent);width:44px;border-radius:2px;margin:14px 0 2px}
+
+  .route{list-style:none;margin-top:18px}
+  .stop{position:relative;padding-left:36px;padding-bottom:18px}
+  .stop::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--accent);opacity:.32}
+  .stop:last-child::before{bottom:auto;height:24px}
+  .stop::after{content:"";position:absolute;left:4px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--accent)}
+  .stop--climax::after{width:20px;height:20px;left:1px;top:4px;box-shadow:0 0 0 6px var(--accent-s)}
+
+  .move{position:relative;padding-left:36px;padding-bottom:14px;display:flex;align-items:center;min-height:14px}
+  .move::before{content:"";position:absolute;left:10px;top:0;bottom:0;border-left:2px dashed var(--accent);opacity:.5}
+  .move__chip{font-family:"DM Mono",monospace;font-size:.73rem;color:var(--soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+
+  .stop__time{font-family:"DM Mono",monospace;font-size:.76rem;color:var(--accent);font-weight:500;letter-spacing:.03em}
+  .stop__title{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.1rem;margin:1px 0 3px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;line-height:1.5}
+  .stop__place{font-size:.82rem;color:var(--soft);margin-bottom:6px}
+  .stop__note{font-size:.9rem}
+  .tag{font-size:.66rem;font-weight:700;padding:2px 8px;border-radius:6px;background:var(--accent-s);color:var(--accent);letter-spacing:.02em;white-space:nowrap}
+
+  .shot{margin-top:9px;font-size:.83rem;background:var(--accent-s);border-radius:10px;padding:8px 12px}
+  .shot b{font-family:"Zen Maru Gothic",sans-serif}
+
+  .links{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+  .lk{font-family:"DM Mono",monospace;font-size:.72rem;text-decoration:none;padding:6px 11px;border-radius:8px;border:1px solid var(--line);color:var(--text);background:var(--card);transition:transform .1s ease,border-color .1s ease}
+  .lk:hover{border-color:var(--accent);transform:translateY(-1px)}
+
+  .callout{margin:2px 0 16px 36px;border:1px dashed var(--accent);border-radius:12px;padding:12px 14px;font-size:.85rem;background:var(--accent-s)}
+  .callout b{font-family:"Zen Maru Gothic",sans-serif;display:block;margin-bottom:2px}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--ink);color:#fff;margin-top:44px;padding:40px 0 52px}
+  .foot h2{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:3px}
+  .foot__hint{color:rgba(255,255,255,.55);font-size:.78rem;margin-bottom:16px}
+  .checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .check{display:flex;gap:9px;align-items:center;font-size:.86rem;padding:9px 11px;border:1px solid rgba(255,255,255,.16);border-radius:10px;cursor:pointer;-webkit-user-select:none;user-select:none;transition:background .12s}
+  .check:hover{background:rgba(255,255,255,.05)}
+  .check .box{width:16px;height:16px;border:2px solid rgba(255,255,255,.5);border-radius:5px;flex:none;display:grid;place-items:center;font-size:.7rem;color:transparent}
+  .check.done{color:rgba(255,255,255,.38);text-decoration:line-through}
+  .check.done .box{background:#3FD9B4;border-color:#3FD9B4;color:var(--ink)}
+  .foot__end{margin-top:24px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;line-height:1.9}
+  .foot__end span{color:#FF8FB0}
+
+  @media (max-width:420px){ .checks{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){ .blob{animation:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <span class="nav__title">かぞくソウル旅 <span>2026.8.29›31</span></span>
+    <a class="pill pill--1" href="#day1">1日目</a>
+    <a class="pill pill--2" href="#day2">2日目</a>
+    <a class="pill pill--3" href="#day3">3日目</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__glow" aria-hidden="true">
+    <span class="blob blob--a"></span>
+    <span class="blob blob--b"></span>
+    <span class="blob blob--c"></span>
+  </div>
+  <div class="wrap">
+    <p class="eyebrow">Family Trip · Seoul</p>
+    <h1 class="hero__kr">서울</h1>
+    <p class="hero__en">SEOUL 2026</p>
+    <p class="hero__sub">2泊3日、かぞくで韓国へ。食べて、歩いて、写真いっぱい撮ろう。</p>
+
+    <div class="pass">
+      <div class="pass__row">
+        <div>
+          <span class="pass__code">11:45</span>
+          <span class="pass__city">KIX / 関西</span>
+        </div>
+        <div class="pass__mid"><span>✈ 約2h30m</span></div>
+        <div style="text-align:right">
+          <span class="pass__code">15:30</span>
+          <span class="pass__city">ICN / 仁川（現地）</span>
+        </div>
+      </div>
+      <p class="pass__meta">8.29 SAT ─ 8.31 MON ／ 復路 14:40 ICN → 16:30 KIX</p>
+    </div>
+
+    <p class="count">出発まで <b id="count">--</b> <span id="countUnit"></span></p>
+    <p class="scrollcue">↓ スクロールして しおりを開く</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= DAY 1 ================= -->
+  <section class="day day--1" id="day1">
+    <p class="day__eyebrow">DAY 01 · 🌸</p>
+    <h2 class="day__date">8月29日（土）</h2>
+    <p class="day__route">仁川 → 明洞 → 王妃家 → 東大門</p>
+    <div class="day__hr"></div>
+
+    <ol class="route">
+      <li class="stop">
+        <p class="stop__time">11:45</p>
+        <h3 class="stop__title">✈️ 関空を出発</h3>
+        <p class="stop__place">関西国際空港 → 仁川国際空港</p>
+        <p class="stop__note">いよいよ出発。搭乗したら時計を韓国時間に（日本と時差なし＝そのままでOK）。到着後の交通系はTマネーの残高チェックを。</p>
+      </li>
+
+      <li class="move"><span class="move__chip">✈️ フライト 約2時間30分</span></li>
+
+      <li class="stop">
+        <p class="stop__time">15:30 – 16:30 ごろ</p>
+        <h3 class="stop__title">🚕 空港からホテルへ</h3>
+        <p class="stop__place">仁川空港 → ソウル市内のホテル</p>
+        <p class="stop__note">入国審査・荷物受け取り・高速道路の渋滞で前後します。焦らずに。到着したらまず両替のレート確認を。</p>
+      </li>
+
+      <li class="stop">
+        <p class="stop__time">着いたら</p>
+        <h3 class="stop__title">🏨 ホテルにチェックイン</h3>
+        <p class="stop__note">荷物を置いて、身軽になってから出発。</p>
+      </li>
+
+      <div class="callout">
+        <b>📌 初日にやること</b>
+        フロントで <strong>2日目の夜（8/30 17:30〜）オダリチプ</strong> の予約をお願いする。カンジャンケジャンは人気なので早めの確保が安心。
+      </div>
+
+      <li class="move"><span class="move__chip">🚶 徒歩 or 🚕 明洞へ</span></li>
+
+      <li class="stop">
+        <p class="stop__time">16:30 – 18:00</p>
+        <h3 class="stop__title">🛍 明洞でショッピング</h3>
+        <p class="stop__place">Olive Young 明洞タウン 周辺</p>
+        <p class="stop__note">コスメ・洋服・お土産をまとめ買い。Olive Youngはパスポート提示で即時免税、アプリ会員価格もチェック。</p>
+        <div class="shot"><b>📸 撮影ミッション</b>／ネオン看板がひしめく明洞の大通りをバックに、家族全員で1枚。人が増える夕方以降のほうが“ザ・ソウル”感が出ます。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%AA%85%EB%8F%99%ED%83%80%EC%9A%B4">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="stop">
+        <p class="stop__time">18:00 – 19:30</p>
+        <h3 class="stop__title">🥩 王妃家（ワンビチプ）明洞本店 <span class="tag">JCBカード割引</span></h3>
+        <p class="stop__place">🍖 焼肉 ／ 味付けカルビ・韓牛カルビ・豚カルビ</p>
+        <p class="stop__note">店員さんがテーブルで焼いてくれるタイプ。看板は味付けカルビ。会計のときにJCBカードを忘れずに提示。</p>
+        <div class="shot"><b>📸</b>／網の上のカルビを寄りで。湯気が立っている瞬間を狙う。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=2664">コネストで見る →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%99%95%EB%B9%84%EC%A7%91%20%EB%AA%85%EB%8F%99%EB%B3%B8%EC%A0%90">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚇 4호선 明洞→東大門（乗換なし・約10分） or 🚕 タクシー</span></li>
+
+      <li class="stop">
+        <p class="stop__time">20:00 – 22:30</p>
+        <h3 class="stop__title">🛍 東大門を散策</h3>
+        <p class="stop__place">DDP（東大門デザインプラザ）周辺</p>
+        <p class="stop__note">深夜まで開くファッションビル街。買い物のあとは屋台へ 🌭 トッポッキ・おでん・ホットク。</p>
+        <div class="shot"><b>📸</b>／DDPの宇宙船のような曲線を、見上げアングルで。夜はLEDバラのライトアップも狙い目。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚕 タクシーでホテルへ（約10〜15分）</span></li>
+
+      <li class="stop">
+        <p class="stop__time">22:30 – 23:00</p>
+        <h3 class="stop__title">🏨 ホテルに戻る</h3>
+        <p class="stop__note">1日目おつかれさま。明日は朝が早いので早めに就寝を。</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= DAY 2 ================= -->
+  <section class="day day--2" id="day2">
+    <p class="day__eyebrow">DAY 02 · 💜</p>
+    <h2 class="day__date">8月30日（日）</h2>
+    <p class="day__route">安国 → 北村 → 景福宮 → 聖水 → 明洞 → 漢江</p>
+    <div class="day__hr"></div>
+
+    <ol class="route">
+      <li class="stop">
+        <p class="stop__time">7:20 – 7:30</p>
+        <h3 class="stop__title">🏨 ホテルを出発</h3>
+        <p class="stop__note">朝からしっかり動く一日。歩きやすい靴で。</p>
+      </li>
+
+      <li class="move"><span class="move__chip">🚇 4호선 明洞→東大門歴史文化公園 → 3호선へ乗換 → 安国（約20〜25分）</span></li>
+
+      <li class="stop">
+        <p class="stop__time">8:00 – 9:00</p>
+        <h3 class="stop__title">🥐 ドトリガーデン（DOTORI GARDEN）安国店</h3>
+        <p class="stop__place">☕ 朝ごはん・カフェ ／ 安国駅3番出口から徒歩約3分</p>
+        <p class="stop__note">緑いっぱいの店内でゆっくり朝食。</p>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=32290">コネストで見る →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EB%8F%84%ED%86%A0%EB%A6%AC%EA%B0%80%EB%93%A0%20%EC%95%88%EA%B5%AD">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚶 徒歩 2〜3分</span></li>
+
+      <li class="stop">
+        <p class="stop__time">9:00 ごろ</p>
+        <h3 class="stop__title">☕ Cafe Onion 安国</h3>
+        <p class="stop__place">人気ベーカリーカフェ（日曜は9:00オープン）</p>
+        <p class="stop__note">古い韓屋を改装した空間。混む前に。パンだけテイクアウトでもOK。</p>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%B9%B4%ED%8E%98%20%EC%96%B4%EB%8B%88%EC%96%B8%20%EC%95%88%EA%B5%AD">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚶 徒歩 10分前後</span></li>
+
+      <li class="stop">
+        <p class="stop__time">9:10 ごろ</p>
+        <h3 class="stop__title">🥐 Artist Bakery 安国店</h3>
+        <p class="stop__place">パンを買い足す</p>
+        <p class="stop__note">このあとの散策のおともに。</p>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=34009">コネストで見る →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%95%84%ED%8B%B0%EC%8A%A4%ED%8A%B8%20%EB%B2%A0%EC%9D%B4%EC%BB%A4%EB%A6%AC%20%EC%95%88%EA%B5%AD">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚶 徒歩すぐ</span></li>
+
+      <li class="stop">
+        <p class="stop__time">9:30 – 11:00</p>
+        <h3 class="stop__title">🏘 北村韓屋村（プッチョンハノクマウル）</h3>
+        <p class="stop__place">韓屋の街並みを散策</p>
+        <p class="stop__note">実際に人が住んでいるエリアなので、静かに歩く。坂道が多いので水分補給を。</p>
+        <div class="shot"><b>📸 撮影ミッション</b>／三清洞方面へ下る石畳の坂の途中から。坂の下にNソウルタワーが入る“北村の定番アングル”を探して。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EB%B6%81%EC%B4%8C%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚶 徒歩 20分前後 or 🚕</span></li>
+
+      <li class="stop">
+        <p class="stop__time">11:00 – 12:15</p>
+        <h3 class="stop__title">👑 景福宮（キョンボックン）</h3>
+        <p class="stop__place">光化門 → 勤政殿 → 敷地内を散策（約1時間）</p>
+        <p class="stop__note">ソウル観光の王道。韓服（ハンボッ）を着ていれば入場無料。守門将の交代式は 10:00 / 13:00 / 15:00。</p>
+        <div class="shot"><b>📸</b>／光化門の前で全員。衛兵と一緒に撮れることも。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EB%B3%B5%EA%B6%81">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="stop">
+        <p class="stop__time">12:15 – 13:15</p>
+        <h3 class="stop__title">🍚 景福宮まわりでランチ</h3>
+        <p class="stop__place">🥇 土俗村（サムゲタン）／ 🥈 黄生家カルグクス（カルグクス・餃子）</p>
+        <p class="stop__note">どちらも名店で行列あり。がっつりなら参鶏湯の土俗村、あっさりなら黄生家のカルグクス。</p>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=1438">土俗村 コネスト →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=1639">黄生家 コネスト →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%ED%86%A0%EC%86%8D%EC%B4%8C%20%EC%82%BC%EA%B3%84%ED%83%95">🗺 土俗村</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚕 景福宮 → 聖水（4人なのでタクシーが楽・約20分）</span></li>
+
+      <li class="stop">
+        <p class="stop__time">14:00 – 17:00</p>
+        <h3 class="stop__title">🩷 聖水（ソンス）でショッピング</h3>
+        <p class="stop__place">ポップアップ・韓国コスメ・洋服・雑貨・カフェ・写真スポット</p>
+        <p class="stop__note">“韓国のブルックリン”と呼ばれる倉庫街エリア。話題のポップアップストアが集まる。歩き回るので途中でカフェ休憩を。</p>
+        <div class="shot"><b>📸</b>／赤レンガの倉庫をリノベした空間で。ポップアップの装飾は撮影OKのところが多い。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%84%B1%EC%88%98%EB%8F%99%20%EC%B9%B4%ED%8E%98%EA%B1%B0%EB%A6%AC">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚕 聖水 → 明洞（約30〜40分）</span></li>
+
+      <li class="stop">
+        <p class="stop__time">17:30 – 18:45</p>
+        <h3 class="stop__title">🦀 オダリチプ 明洞直営店 <span class="tag">クーポンあり</span></h3>
+        <p class="stop__place">カンジャンケジャン（渡りガニの醤油漬け）</p>
+        <p class="stop__note">予約できるなら17:30の枠で（※初日にホテルのフロントで予約依頼）。ごはんが止まらなくなる“ごはん泥棒”。</p>
+        <div class="shot"><b>📸</b>／甲羅にごはんを詰める瞬間を動画で。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_map.html?id=3664">コネスト（地図・クーポン）→</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%98%A4%EB%8B%A4%EB%A6%AC%EC%A7%91%20%EA%B0%84%EC%9E%A5%EA%B2%8C%EC%9E%A5%20%EB%AA%85%EB%8F%99">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚕 明洞 → 漢江（約15分）</span></li>
+
+      <li class="stop">
+        <p class="stop__time">19:15 – 19:45</p>
+        <h3 class="stop__title">☕ 漢江のスターバックス</h3>
+        <p class="stop__place">スターバックス ソウルウェーブアートセンター店</p>
+        <p class="stop__note">漢江の水面ぎりぎりに建つ店舗。大きな窓ごしに川を眺めてひと休み。</p>
+        <div class="shot"><b>📸</b>／窓ぎわの席から漢江。夕暮れ〜日没の時間帯がいちばんきれい。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=29328">コネストで見る →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4%20%EC%84%9C%EC%9A%B8%EC%9B%A8%EC%9D%B4%EB%B8%8C%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚶 盤浦漢江公園へ徒歩</span></li>
+
+      <li class="stop stop--climax">
+        <p class="stop__time">20:00 – 20:20</p>
+        <h3 class="stop__title">🌈 盤浦大橋・月光虹噴水</h3>
+        <p class="stop__place">今回のメインイベント ── 漢江の“水のショー” ✨</p>
+        <p class="stop__note">橋の両側から漢江へ水が噴き出し、ライトアップで虹色に染まります。日曜20:00の回を狙う（雨天・強風で中止のことあり）。</p>
+        <div class="shot"><b>📸 いちばんの撮りどころ</b>／橋から落ちる“虹の滝”は、横向き（landscape）の動画で30秒ほど。盤浦漢江公園側から全体が入ります。</div>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EB%B0%98%ED%8F%AC%EB%8C%80%EA%B5%90%20%EB%8B%AC%EB%B9%9B%EB%AC%B4%EC%A7%80%EA%B0%9C%EB%B6%84%EC%88%98">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚕 タクシーでホテルへ（21:00 ごろ）</span></li>
+
+      <div class="callout">
+        <b>☔ 雨のときのプラン</b>
+        漢江の噴水は中止になりやすいので、<strong>聖水 → オダリチプ → 明洞</strong> で切り上げてホテルへ。噴水は3日目の朝の余力しだいで再チャレンジも。
+      </div>
+
+      <li class="stop">
+        <p class="stop__time">21:00 ごろ</p>
+        <h3 class="stop__title">🏨 ホテルに戻る</h3>
+        <p class="stop__note">2日目完了。明日は最終日、荷造りを少しだけ進めて就寝。</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= DAY 3 ================= -->
+  <section class="day day--3" id="day3">
+    <p class="day__eyebrow">DAY 03 · 💚</p>
+    <h2 class="day__date">8月31日（月）</h2>
+    <p class="day__route">朝ごはん → 明洞 → 仁川</p>
+    <div class="day__hr"></div>
+
+    <ol class="route">
+      <li class="stop">
+        <p class="stop__time">7:30 ごろ</p>
+        <h3 class="stop__title">🏨 ホテルを出発</h3>
+        <p class="stop__note">チェックアウト前に荷物をまとめる。預けられるならフロントへ。</p>
+      </li>
+
+      <li class="stop">
+        <p class="stop__time">7:40 – 8:30</p>
+        <h3 class="stop__title">🥣 最後の朝ごはん</h3>
+        <p class="stop__place">第1候補：味加本（ミガボン）＝アワビ粥 ／ または 神仙ソルロンタン 明洞店＝ソルロンタン</p>
+        <p class="stop__note">どちらも朝から開いていて明洞エリア。胃にやさしいもので旅をしめる。</p>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=719">神仙ソルロンタン コネスト →</a>
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EB%AF%B8%EA%B0%80%EB%B3%B8%20%EB%AA%85%EB%8F%99">🗺 味加本</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚶 徒歩で明洞へ</span></li>
+
+      <li class="stop">
+        <p class="stop__time">8:40 – 10:15</p>
+        <h3 class="stop__title">🛍 明洞で最後の買い物</h3>
+        <p class="stop__place">Olive Young ／ お土産・コスメの買い足し</p>
+        <p class="stop__note">買い忘れの回収タイム。化粧水などの液体類はスーツケースへ（機内持ち込みの100ml制限に注意）。</p>
+        <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%AA%85%EB%8F%99%ED%83%80%EC%9A%B4">🗺 マップで開く</a>
+        </div>
+      </li>
+
+      <li class="move"><span class="move__chip">🚕 ホテルで荷物を回収 → 仁川空港（約60〜70分）</span></li>
+
+      <li class="stop">
+        <p class="stop__time">12:30 – 13:00 ごろ</p>
+        <h3 class="stop__title">✈️ 仁川空港に到着</h3>
+        <p class="stop__note">チェックイン・保安検査・出国。時間があれば空港でおみやげの最終補給。</p>
+      </li>
+
+      <li class="move"><span class="move__chip">✈️ フライト 約1時間50分</span></li>
+
+      <li class="stop">
+        <p class="stop__time">14:40 → 16:30</p>
+        <h3 class="stop__title">🛬 仁川発 → 関空着</h3>
+        <p class="stop__place">おかえりなさい！</p>
+        <p class="stop__note">3日間おつかれさまでした。写真の整理は帰りの機内で。</p>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="foot" id="checklist">
+  <div class="wrap">
+    <h2>わすれものチェック</h2>
+    <p class="foot__hint">タップでチェック（この端末に保存されます）</p>
+    <ul class="checks" id="checks">
+      <li class="check"><span class="box">✓</span>パスポート</li>
+      <li class="check"><span class="box">✓</span>JCBカード</li>
+      <li class="check"><span class="box">✓</span>現金＆クレカ</li>
+      <li class="check"><span class="box">✓</span>Tマネー（交通カード）</li>
+      <li class="check"><span class="box">✓</span>モバイルバッテリー</li>
+      <li class="check"><span class="box">✓</span>充電ケーブル</li>
+      <li class="check"><span class="box">✓</span>変換プラグ（C/SEタイプ・220V）</li>
+      <li class="check"><span class="box">✓</span>エコバッグ</li>
+      <li class="check"><span class="box">✓</span>常備薬</li>
+      <li class="check"><span class="box">✓</span>ウェットティッシュ</li>
+      <li class="check"><span class="box">✓</span>折りたたみ傘</li>
+      <li class="check"><span class="box">✓</span>機内用の上着</li>
+    </ul>
+    <p class="foot__end">たのしい3日間になりますように。<br><span>즐거운 여행 되세요! 🇰🇷</span></p>
+  </div>
+</footer>
+
+<script>
+  // ---- カウントダウン ----
+  (function(){
+    var target = new Date("2026-08-29T11:45:00+09:00");
+    var now = new Date();
+    var el = document.getElementById("count");
+    var unit = document.getElementById("countUnit");
+    var diffDays = Math.ceil((target - now) / 86400000);
+    if (diffDays > 1){ el.textContent = diffDays; unit.textContent = "日"; }
+    else if (diffDays === 1){ el.textContent = "あと1"; unit.textContent = "日！"; }
+    else if (diffDays === 0){ el.textContent = "きょう"; unit.textContent = "出発！"; }
+    else {
+      var endDiff = Math.ceil((new Date("2026-08-31T23:59:00+09:00") - now) / 86400000);
+      if (endDiff >= 0){ el.textContent = "旅行"; unit.textContent = "中！"; }
+      else { el.textContent = "また"; unit.textContent = "行こうね"; }
+    }
+  })();
+
+  // ---- スクロールでナビをハイライト ----
+  (function(){
+    var pills = { day1:document.querySelector('.pill--1'), day2:document.querySelector('.pill--2'), day3:document.querySelector('.pill--3') };
+    var sections = document.querySelectorAll('.day');
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          Object.keys(pills).forEach(function(k){ pills[k].setAttribute('aria-current', k === e.target.id ? 'true' : 'false'); });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach(function(s){ io.observe(s); });
+  })();
+
+  // ---- わすれものチェック（localStorage） ----
+  (function(){
+    var KEY = "seoul-shiori-checklist-2026";
+    var items = document.querySelectorAll('#checks .check');
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){ saved = {}; }
+    items.forEach(function(li, i){
+      if (saved[i]) li.classList.add('done');
+      li.addEventListener('click', function(){
+        li.classList.toggle('done');
+        saved[i] = li.classList.contains('done');
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
