@@ -99,6 +99,30 @@
   .callout{margin:2px 0 16px 36px;border:1px dashed var(--accent);border-radius:12px;padding:12px 14px;font-size:.85rem;background:var(--accent-s)}
   .callout b{font-family:"Zen Maru Gothic",sans-serif;display:block;margin-bottom:2px}
 
+  /* ---------- warn / tips ---------- */
+  .warn{margin-top:9px;font-size:.83rem;background:#FCEFDD;border:1px solid #E7B778;border-left:3px solid #D6862A;border-radius:8px;padding:8px 12px;color:#7C4A16}
+  .warn b{font-family:"Zen Maru Gothic",sans-serif}
+
+  /* ---------- extras（じゅんび & おたのしみ） ---------- */
+  .extra{padding:46px 0 8px;--accent:#B9822A}
+  .extra__eyebrow{font-family:"DM Mono",monospace;font-size:.74rem;letter-spacing:.3em;color:var(--accent);font-weight:500}
+  .extra__title{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.5rem;margin:2px 0 4px}
+  .extra__lead{color:var(--soft);font-size:.85rem}
+  .extra__hr{height:3px;background:var(--accent);width:44px;border-radius:2px;margin:14px 0 4px}
+  .block{margin-top:26px}
+  .block__h{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.06rem;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+  .block__hint{font-size:.74rem;color:var(--soft);font-weight:500}
+  .phrases{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .phrase{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--card)}
+  .phrase .ja{font-size:.78rem;color:var(--soft)}
+  .phrase .ko{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.94rem;margin-top:2px}
+  .phrase .yomi{font-family:"DM Mono",monospace;font-size:.72rem;color:var(--accent);margin-top:1px}
+  .checks--light .check{border-color:var(--line);color:var(--text)}
+  .checks--light .check:hover{background:rgba(0,0,0,.03)}
+  .checks--light .check .box{border-color:#BCB4A4}
+  .checks--light .check.done{color:var(--soft)}
+  .checks--light .check.done .box{background:var(--accent);border-color:var(--accent);color:#fff}
+
   /* ---------- footer ---------- */
   .foot{background:var(--ink);color:#fff;margin-top:44px;padding:40px 0 52px}
   .foot h2{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:3px}
@@ -113,6 +137,7 @@
   .foot__end span{color:#FF8FB0}
 
   @media (max-width:420px){ .checks{grid-template-columns:1fr} }
+  @media (max-width:480px){ .phrases{grid-template-columns:1fr} }
   @media (prefers-reduced-motion:reduce){ .blob{animation:none} html{scroll-behavior:auto} }
 </style>
 </head>
@@ -202,7 +227,7 @@
         <p class="stop__time">16:30 – 18:00</p>
         <h3 class="stop__title">🛍 明洞でショッピング</h3>
         <p class="stop__place">Olive Young 明洞タウン 周辺</p>
-        <p class="stop__note">コスメ・洋服・お土産をまとめ買い。Olive Youngはパスポート提示で即時免税、アプリ会員価格もチェック。</p>
+        <p class="stop__note">コスメ・洋服・お土産をまとめ買い。Olive Youngはパスポート提示で即時免税、アプリ会員価格もチェック。3日目の朝は開店前なので、大きな買い物はこの時間にしっかり済ませておくのが安全。</p>
         <div class="shot"><b>📸 撮影ミッション</b>／ネオン看板がひしめく明洞の大通りをバックに、家族全員で1枚。人が増える夕方以降のほうが“ザ・ソウル”感が出ます。</div>
         <div class="links">
           <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%AA%85%EB%8F%99%ED%83%80%EC%9A%B4">🗺 マップで開く</a>
@@ -311,12 +336,18 @@
 
       <li class="move"><span class="move__chip">🚶 徒歩 20分前後 or 🚕</span></li>
 
+      <div class="callout">
+        <b>👘 韓服（ハンボッ）を着るなら</b>
+        北村〜景福宮エリアに貸衣装店が集中。着ていれば景福宮は入場無料で、写真も一気に華やぎます。予約制の店が多いので、やるなら事前に予約を（着替えで30分ほどみておく）。
+      </div>
+
       <li class="stop">
         <p class="stop__time">11:00 – 12:15</p>
         <h3 class="stop__title">👑 景福宮（キョンボックン）</h3>
         <p class="stop__place">光化門 → 勤政殿 → 敷地内を散策（約1時間）</p>
         <p class="stop__note">ソウル観光の王道。韓服（ハンボッ）を着ていれば入場無料。守門将の交代式は 10:00 / 13:00 / 15:00。</p>
         <div class="shot"><b>📸</b>／光化門の前で全員。衛兵と一緒に撮れることも。</div>
+        <div class="warn"><b>⚠️ 交代式を見たいなら</b>／11:00着だと午前の回（10:00）は終わっています。見たい場合は安国の朝カフェを1軒減らして、9:45ごろまでに光化門へ。次は13:00ですが、ちょうどランチの時間帯です。</div>
         <div class="links">
           <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EB%B3%B5%EA%B6%81">🗺 マップで開く</a>
         </div>
@@ -327,6 +358,7 @@
         <h3 class="stop__title">🍚 景福宮まわりでランチ</h3>
         <p class="stop__place">🥇 土俗村（サムゲタン）／ 🥈 黄生家カルグクス（カルグクス・餃子）</p>
         <p class="stop__note">どちらも名店で行列あり。がっつりなら参鶏湯の土俗村、あっさりなら黄生家のカルグクス。</p>
+        <div class="warn"><b>⚠️ 土俗村は激混み</b>／10:00開店・週末の昼は大行列。開店直後に入るか、13時以降にずらすと待ちが減ります。厳しそうなら黄生家カルグクスに切り替える前提で。</div>
         <div class="links">
           <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=1438">土俗村 コネスト →</a>
           <a class="lk" target="_blank" rel="noopener" href="https://www.konest.com/contents/gourmet_mise_detail.html?id=1639">黄生家 コネスト →</a>
@@ -383,7 +415,9 @@
         <p class="stop__place">今回のメインイベント ── 漢江の“水のショー” ✨</p>
         <p class="stop__note">橋の両側から漢江へ水が噴き出し、ライトアップで虹色に染まります。日曜20:00の回を狙う（雨天・強風で中止のことあり）。</p>
         <div class="shot"><b>📸 いちばんの撮りどころ</b>／橋から落ちる“虹の滝”は、横向き（landscape）の動画で30秒ほど。盤浦漢江公園側から全体が入ります。</div>
+        <div class="warn"><b>⚠️ 当日かならず確認</b>／噴水は4〜10月のみ運行で、時刻はその月ごとに変わります。雨・強風だと中止。出発前に運行時刻をチェックしておいてください。</div>
         <div class="links">
+          <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/search?q=%EB%8B%AC%EB%B9%9B%EB%AC%B4%EC%A7%80%EA%B0%9C%EB%B6%84%EC%88%98+%EC%9A%B4%EC%98%81%EC%8B%9C%EA%B0%84">🕗 運行時刻を確認</a>
           <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EB%B0%98%ED%8F%AC%EB%8C%80%EA%B5%90%20%EB%8B%AC%EB%B9%9B%EB%AC%B4%EC%A7%80%EA%B0%9C%EB%B6%84%EC%88%98">🗺 マップで開く</a>
         </div>
       </li>
@@ -398,7 +432,7 @@
       <li class="stop">
         <p class="stop__time">21:00 ごろ</p>
         <h3 class="stop__title">🏨 ホテルに戻る</h3>
-        <p class="stop__note">2日目完了。明日は最終日、荷造りを少しだけ進めて就寝。</p>
+        <p class="stop__note">2日目完了。明日の朝はかなりタイトなので、スーツケースのパッキングは今夜のうちに8割終わらせておく。</p>
       </li>
     </ol>
   </section>
@@ -435,6 +469,7 @@
         <h3 class="stop__title">🛍 明洞で最後の買い物</h3>
         <p class="stop__place">Olive Young ／ お土産・コスメの買い足し</p>
         <p class="stop__note">買い忘れの回収タイム。化粧水などの液体類はスーツケースへ（機内持ち込みの100ml制限に注意）。</p>
+        <div class="warn"><b>⚠️ 開店時間に注意</b>／明洞の Olive Young は 10:00 開店。8:40スタートだとほぼ開いていないので、本気の買い物は1日目の夜に済ませ、ここは最終確認くらいに。時間が押したら買い物は切って空港へ（14:40発、余裕は約2時間）。</div>
         <div class="links">
           <a class="lk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%AA%85%EB%8F%99%ED%83%80%EC%9A%B4">🗺 マップで開く</a>
         </div>
@@ -459,13 +494,63 @@
     </ol>
   </section>
 
+  <!-- ================= じゅんび & おたのしみ ================= -->
+  <section class="extra" id="extra">
+    <p class="extra__eyebrow">BEFORE / DURING</p>
+    <h2 class="extra__title">じゅんび & おたのしみ</h2>
+    <p class="extra__lead">出発前の手配、現地で使える韓国語、家族みんなのミッション。</p>
+    <div class="extra__hr"></div>
+
+    <div class="block">
+      <h3 class="block__h">🧳 出発前にやること <span class="block__hint">／ タップでチェック</span></h3>
+      <ul class="checks checks--light" data-checklist="junbi">
+        <li class="check"><span class="box">✓</span>eSIM または WiFiルーターの手配</li>
+        <li class="check"><span class="box">✓</span>カカオT（配車アプリ）をDL＋カード登録</li>
+        <li class="check"><span class="box">✓</span>Tマネーを人数分そろえる</li>
+        <li class="check"><span class="box">✓</span>旅行保険に加入・連絡先を控える</li>
+        <li class="check"><span class="box">✓</span>屋台用に現金を少し両替（市内の両替所がお得）</li>
+        <li class="check"><span class="box">✓</span>空港→ホテルの移動手段を決める（4人＋荷物ならタクシー・約6.5〜9万ウォン）</li>
+        <li class="check"><span class="box">✓</span>在韓国日本大使館の番号をメモ（+82-2-2170-5200）</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3 class="block__h">🗣 これだけ韓国語 <span class="block__hint">／ カナ読みは目安</span></h3>
+      <ul class="phrases">
+        <li class="phrase"><p class="ja">こんにちは</p><p class="ko">안녕하세요</p><p class="yomi">アンニョンハセヨ</p></li>
+        <li class="phrase"><p class="ja">ありがとうございます</p><p class="ko">감사합니다</p><p class="yomi">カムサハムニダ</p></li>
+        <li class="phrase"><p class="ja">すみません（呼びかけ）</p><p class="ko">저기요</p><p class="yomi">チョギヨ</p></li>
+        <li class="phrase"><p class="ja">これください</p><p class="ko">이거 주세요</p><p class="yomi">イゴ ジュセヨ</p></li>
+        <li class="phrase"><p class="ja">お会計お願いします</p><p class="ko">계산해 주세요</p><p class="yomi">ケサンヘ ジュセヨ</p></li>
+        <li class="phrase"><p class="ja">辛くしないでください</p><p class="ko">안 맵게 해 주세요</p><p class="yomi">アン メッケ ヘ ジュセヨ</p></li>
+        <li class="phrase"><p class="ja">いくらですか？</p><p class="ko">얼마예요?</p><p class="yomi">オルマエヨ</p></li>
+        <li class="phrase"><p class="ja">美味しいです</p><p class="ko">맛있어요</p><p class="yomi">マシッソヨ</p></li>
+        <li class="phrase"><p class="ja">トイレはどこですか？</p><p class="ko">화장실 어디예요?</p><p class="yomi">ファジャンシル オディエヨ</p></li>
+        <li class="phrase"><p class="ja">写真を撮ってもらえますか？</p><p class="ko">사진 찍어 주세요</p><p class="yomi">サジン チゴ ジュセヨ</p></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3 class="block__h">🎯 家族ミッション <span class="block__hint">／ タップでクリア</span></h3>
+      <ul class="checks checks--light" data-checklist="mission">
+        <li class="check"><span class="box">✓</span>屋台グルメを3種類 制覇（トッポッキ・おでん・ホットク…）</li>
+        <li class="check"><span class="box">✓</span>家族全員が写った写真を10枚以上</li>
+        <li class="check"><span class="box">✓</span>韓国語のフレーズを自分で3回使う</li>
+        <li class="check"><span class="box">✓</span>景福宮で家族写真を撮る</li>
+        <li class="check"><span class="box">✓</span>虹噴水の動画を撮る</li>
+        <li class="check"><span class="box">✓</span>韓国コスメで“今日のお気に入り”を1つ決める</li>
+        <li class="check"><span class="box">✓</span>いちばん美味しかった店を全員で投票</li>
+      </ul>
+    </div>
+  </section>
+
 </main>
 
 <footer class="foot" id="checklist">
   <div class="wrap">
     <h2>わすれものチェック</h2>
     <p class="foot__hint">タップでチェック（この端末に保存されます）</p>
-    <ul class="checks" id="checks">
+    <ul class="checks" data-checklist="mochimono">
       <li class="check"><span class="box">✓</span>パスポート</li>
       <li class="check"><span class="box">✓</span>JCBカード</li>
       <li class="check"><span class="box">✓</span>現金＆クレカ</li>
@@ -516,18 +601,19 @@
     sections.forEach(function(s){ io.observe(s); });
   })();
 
-  // ---- わすれものチェック（localStorage） ----
+  // ---- チェックリスト（localStorage・複数対応） ----
   (function(){
-    var KEY = "seoul-shiori-checklist-2026";
-    var items = document.querySelectorAll('#checks .check');
-    var saved = {};
-    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){ saved = {}; }
-    items.forEach(function(li, i){
-      if (saved[i]) li.classList.add('done');
-      li.addEventListener('click', function(){
-        li.classList.toggle('done');
-        saved[i] = li.classList.contains('done');
-        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+    document.querySelectorAll('[data-checklist]').forEach(function(list){
+      var KEY = "seoul-shiori-" + list.getAttribute('data-checklist') + "-2026";
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){ saved = {}; }
+      list.querySelectorAll('.check').forEach(function(li, i){
+        if (saved[i]) li.classList.add('done');
+        li.addEventListener('click', function(){
+          li.classList.toggle('done');
+          saved[i] = li.classList.contains('done');
+          try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+        });
       });
     });
   })();
